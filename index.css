@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+}
+
+header,
+footer {
+  background-color: #1b244a;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  width: 600px;
+  margin: 0 auto;
+  border-bottom: 2px solid #9aabd8;
+  border-top: 2px solid #9aabd8;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+  background-color: #1b244a;
+  margin: auto;
+}
+
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: #eeeeee;
+  text-align: center;
+  margin: 21px 0px 21px 0px;
+}
+
+.score-display {
+  width: 170px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #080001;
+  border-radius: 5px;
+}
+
+.score-number {
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-size: 90px;
+  font-weight: bold;
+  color: #f94f6d;
+  margin: 0;
+  line-height: 1;
+}
+
+.score-btns {
+  width: 150px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-btn {
+  font-family: "Cursed Timer ULiL", sans-serif;
+  background: none;
+  border: 2px solid #9aabd8;
+  border-radius: 5px;
+  color: #9aabd8;
+  text-align: center;
+  padding: 8px 7px;
+}
+
+#newgamebutton {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  background: none;
+  border: 2px solid #9aabd8;
+  border-radius: 5px;
+  color: #eeeeee;
+  padding: 8px 7px;
+  background-color: #f94f6d;
+}
+
+#controls-section {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#timer-section {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  width: 130px;
+  border: 5px solid #9aabd8;
+  border-radius: 5px;
+  padding: 10px;
+  color: #9aabd8;
+  text-align: center;
+}

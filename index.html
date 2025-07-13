@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.cdnfonts.com/css/cursed-timer-ulil"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Basketball Scoreboard</h1>
+    </header>
+
+    <main class="container">
+      <section>
+        <h2>HOME</h2>
+        <div class="score-display" id="home-display">
+          <span class="score-number" id="home-score"> 0</span>
+        </div>
+        <div class="score-btns">
+          <button class="add-btn" onclick="addOne('home')">+1</button>
+          <button class="add-btn" onclick="addTwo('home')">+2</button>
+          <button class="add-btn" onclick="addThree('home')">+3</button>
+        </div>
+      </section>
+      <section>
+        <h2>GUEST</h2>
+        <div class="score-display" id="guest-display">
+          <span class="score-number" id="guest-score"> 0</span>
+        </div>
+        <div class="score-btns">
+          <button class="add-btn" onclick="addOne('guest')">+1</button>
+          <button class="add-btn" onclick="addTwo('guest')">+2</button>
+          <button class="add-btn" onclick="addThree('guest')">+3</button>
+        </div>
+      </section>
+      <section id="controls-section">
+        <div id="timer-section">
+          <span>
+            Remaining Time: <span id="time-remain"> 60 </span> seconds
+          </span>
+        </div>
+        <button id="newgamebutton" onclick="resetscore()">New Game</button>
+      </section>
+    </main>
+    <footer>
+      <p>© 2025 Basketball Scoreboard App</p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
