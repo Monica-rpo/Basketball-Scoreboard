@@ -17,7 +17,7 @@ A simple, interactive basketball scoreboard app built with JavaScript, HTML, and
 
 <!-- Netlify link to be added -->
 
-[Live Demo](#)
+[Live Demo](https://basketball-scoreboard-bymonica.netlify.app/)
 
 ## Features
 
