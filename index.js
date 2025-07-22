@@ -11,24 +11,25 @@ let gStarted = "false";
 let homeScoreValue = 0;
 let guestScoreValue = 0;
 
-// Load initial game state from localStorage
+// Load initial game state from sessionStorage
 // If the scores are not set, it initializes them to zero.
-homeScoreValue = parseInt(localStorage.getItem("Home")) || 0;
+homeScoreValue = parseInt(sessionStorage.getItem("Home")) || 0;
 homeScore.textContent = homeScoreValue;
-guestScoreValue = parseInt(localStorage.getItem("Guest")) || 0;
+guestScoreValue = parseInt(sessionStorage.getItem("Guest")) || 0;
 guestScore.textContent = guestScoreValue;
-gStarted = localStorage.getItem("GameStarted") || "false";
+gStarted = sessionStorage.getItem("GameStarted") || "false";
 // If the game has started, it retrieves the remaining time and starts the timer.
-// If the game has not started, it clears the localStorage to reset the game state.
+// If the game has not started, it clears the sessionStorage  to reset the game state.
 if (gStarted === "true") {
-  timeremaining = parseInt(localStorage.getItem("Time"));
+  timeremaining = parseInt(sessionStorage.getItem("Time"));
   timervalue.textContent = timeremaining;
   startTimer();
   highlightLeader();
   timerDisplay.style.backgroundColor = "#556591ff";
   timerDisplay.style.color = "white";
 } else {
-  localStorage.clear();
+  clearInterval(timerinterval);
+  sessionStorage.clear();
 }
 
 // Function to highlight the leader
@@ -68,8 +69,8 @@ function increaseScore(player, value) {
       guestScoreValue += value;
     }
     highlightLeader();
-    localStorage.setItem("Home", JSON.stringify(homeScoreValue));
-    localStorage.setItem("Guest", JSON.stringify(guestScoreValue));
+    sessionStorage.setItem("Home", JSON.stringify(homeScoreValue));
+    sessionStorage.setItem("Guest", JSON.stringify(guestScoreValue));
   }
 }
 
@@ -80,13 +81,13 @@ function increaseScore(player, value) {
 function tHandler() {
   timeremaining--;
   timervalue.textContent = timeremaining;
-  localStorage.setItem("Time", JSON.stringify(timeremaining));
+  sessionStorage.setItem("Time", JSON.stringify(timeremaining));
   if (timeremaining == 0) {
     gStarted = "false";
-    localStorage.setItem("GameStarted", "false");
+    sessionStorage.setItem("GameStarted", "false");
     alert("TimeOut");
     clearInterval(timerinterval);
-    localStorage.clear();
+    sessionStorage.clear();
   }
 }
 
@@ -106,7 +107,7 @@ function resetscore() {
   homeScore.textContent = 0;
   guestScore.textContent = 0;
   gStarted = "true";
-  localStorage.setItem("GameStarted", "true");
+  sessionStorage.setItem("GameStarted", "true");
   timeremaining = 60;
   timervalue.textContent = timeremaining;
   startTimer();
