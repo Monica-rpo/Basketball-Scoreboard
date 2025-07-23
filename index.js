@@ -102,10 +102,13 @@ function startTimer() {
 // It sets the game state to started, resets the scores to zero, and starts the timer.
 // This function is called when the user clicks the "Start Game" button in the HTML.
 function resetscore() {
+  sessionStorage.clear();
+  clearInterval(timerinterval);
   timerDisplay.style.backgroundColor = "#556591ff";
   timerDisplay.style.color = "white";
   homeScore.textContent = 0;
   guestScore.textContent = 0;
+  highlightLeader();
   gStarted = "true";
   sessionStorage.setItem("GameStarted", "true");
   timeremaining = 60;
